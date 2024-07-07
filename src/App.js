@@ -1,40 +1,43 @@
+import { useState } from "react";
+
 const messages = [
   "Learn React ⚛️",
   "Apply for jobs 💼",
-  "Invest your new income 🤑",
+  "Invest your new income ➰",
 ];
+// const step = 1;
 
 export default function App() {
-  const step = 3;
+  const [step, setStep] = useState(1);
 
+  console.log(messages.length);
   function handlePrevious() {
-    alert("previous");
+    if (step > 1) setStep(step - 1);
   }
   function handleNext() {
-    alert("next");
+    if (step < messages.length) setStep(step + 1);
   }
-
   return (
     <div className="h-screen text-white bg-light-gray flex items-center justify-center ">
       <div className="p-12 w-[600px] max-w-[90%] h-fit flex flex-col gap-8 items-center justify-between bg-zinc-200">
         <div className="flex items-center justify-between w-full text-black ">
           <div
             className={`${
-              step === 1 ? "bg-custom-purple" : "bg-zinc-300"
+              step >= 1 ? "bg-custom-purple" : "bg-zinc-300"
             } rounded-full  w-12 font-semibold text-lg h-12 flex items-center justify-center cursor-pointer`}
           >
             1
           </div>
           <div
             className={`${
-              step === 2 ? "bg-custom-purple" : "bg-zinc-300"
-            } rounded-full  w-12 font-semibold text-lg h-12 flex items-center justify-center `}
+              step >= 2 ? "bg-custom-purple" : "bg-zinc-300"
+            } rounded-full  w-12 font-semibold text-lg h-12 flex items-center justify-center cursor-pointer`}
           >
             2
           </div>
           <div
             className={`${
-              step === 3 ? "bg-custom-purple" : "bg-zinc-300"
+              step >= 3 ? "bg-custom-purple" : "bg-zinc-300"
             } rounded-full  w-12 font-semibold text-lg h-12 flex items-center justify-center cursor-pointer`}
           >
             3
