@@ -24,21 +24,21 @@ export default function App() {
           <div
             className={`${
               step >= 1 ? "bg-custom-purple" : "bg-zinc-300"
-            } rounded-full  w-12 font-semibold text-lg h-12 flex items-center justify-center cursor-pointer`}
+            } rounded-full   font-semibold text-lg h-10 w-10 flex items-center justify-center cursor-pointer`}
           >
             1
           </div>
           <div
             className={`${
               step >= 2 ? "bg-custom-purple" : "bg-zinc-300"
-            } rounded-full  w-12 font-semibold text-lg h-12 flex items-center justify-center cursor-pointer`}
+            } rounded-full  w-10 font-semibold text-lg h-10 flex items-center justify-center cursor-pointer`}
           >
             2
           </div>
           <div
             className={`${
               step >= 3 ? "bg-custom-purple" : "bg-zinc-300"
-            } rounded-full  w-12 font-semibold text-lg h-12 flex items-center justify-center cursor-pointer`}
+            } rounded-full  w-10 font-semibold text-lg h-10 flex items-center justify-center cursor-pointer`}
           >
             3
           </div>
