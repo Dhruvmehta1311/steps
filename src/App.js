@@ -12,16 +12,19 @@ export default function App() {
 
   console.log(messages.length);
   function handlePrevious() {
-    if (step > 1) setStep(step - 1);
+    if (step > 1) setStep((s) => s - 1);
   }
   function handleNext() {
-    if (step < messages.length) setStep(step + 1);
+    if (step < messages.length) {
+      setStep((s) => s + 1);
+      // setStep((s) => s + 1);
+    }
   }
   return (
     <div className="h-screen text-white bg-light-gray flex items-center justify-center flex-col relative">
       <p
         onClick={() => {
-          setIsOpen(!isOpen);
+          setIsOpen((checkIsOpen) => !checkIsOpen);
         }}
         className="absolute top-[23%] text-black text-right w-[600px] max-w-[90%] text-3xl cursor-pointer"
       >
