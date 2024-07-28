@@ -10,7 +10,7 @@ export default function App() {
   const [step, setStep] = useState(1);
   const [isOpen, setIsOpen] = useState(true);
 
-  console.log(messages.length);
+  // console.log(messages.length);
   function handlePrevious() {
     if (step > 1) setStep((s) => s - 1);
   }
