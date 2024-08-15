@@ -55,9 +55,8 @@ export default function App() {
               3
             </div>
           </div>
-          <h1 className="font-semibold text-lg text-black">
-            Step {step} : {messages[step - 1]}
-          </h1>
+          <StepMessage step={step}>{messages[step - 1]}</StepMessage>
+
           <div className="flex items-center justify-between w-full">
             <Button bgColor="{#7950f2" onClick={handlePrevious}>
               👈 Previous
@@ -68,6 +67,16 @@ export default function App() {
           </div>
         </div>
       )}
+    </div>
+  );
+}
+
+function StepMessage({ step, children }) {
+  return (
+    <div>
+      <h1 className="font-semibold text-lg text-black">
+        Step {step}: {children}
+      </h1>
     </div>
   );
 }
