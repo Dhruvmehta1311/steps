@@ -59,26 +59,27 @@ export default function App() {
             Step {step} : {messages[step - 1]}
           </h1>
           <div className="flex items-center justify-between w-full">
-            <button
-              style={{ backgroundColor: "#7950f2" }}
-              className="font-semibold text-sm px-3 py-2 rounded-md"
-              onClick={handlePrevious}
-              // onMouseEnter={() => {
-              //   alert("Mouse has Entered.");
-              // }}
-            >
-              Previous
-            </button>
-            <button
-              style={{ backgroundColor: "#7950f2" }}
-              className="font-semibold text-sm px-3 py-2 rounded-md"
-              onClick={handleNext}
-            >
-              Next
-            </button>
+            <Button bgColor="{#7950f2" onClick={handlePrevious}>
+              👈 Previous
+            </Button>
+            <Button bgColor="#7950f2" onClick={handleNext}>
+              Next 👉
+            </Button>
           </div>
         </div>
       )}
     </div>
+  );
+}
+
+function Button({ onClick, children }) {
+  return (
+    <button
+      style={{ backgroundColor: "#7950f2" }}
+      className="font-semibold text-sm px-3 py-2 rounded-md"
+      onClick={onClick}
+    >
+      {children}
+    </button>
   );
 }
