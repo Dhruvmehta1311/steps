@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { MdOutlineMenu } from "react-icons/md";
+import { RxCross2 } from "react-icons/rx";
 
 const messages = [
   "Learn React ⚛️",
@@ -21,15 +23,19 @@ export default function App() {
     }
   }
   return (
-    <div className="h-screen text-white bg-light-gray flex items-center justify-center flex-col relative">
-      <p
-        onClick={() => {
-          setIsOpen((checkIsOpen) => !checkIsOpen);
-        }}
-        className="absolute top-[23%] text-black text-right w-[600px] max-w-[90%] text-3xl cursor-pointer"
-      >
-        &times;
-      </p>
+    <div className="h-screen text-white bg-light-gray flex items-center justify-center flex-col ">
+      <div className="flex justify-center items-center text-center max-w-[600px] w-[90%] ">
+        <div className="w-full flex justify-end items-center">
+          <p
+            onClick={() => {
+              setIsOpen((checkIsOpen) => !checkIsOpen);
+            }}
+            className="text-black text-3xl cursor-pointer"
+          >
+            {isOpen ? <RxCross2 /> : <MdOutlineMenu />}
+          </p>
+        </div>
+      </div>
       {isOpen && (
         <div className="p-12 w-[600px] max-w-[90%] h-fit flex flex-col gap-8 items-center justify-between bg-zinc-200">
           <div className="flex items-center justify-between w-full text-black ">
